@@ -18,6 +18,8 @@ public enum BMSPlayerRule {
 
 	LR2(GaugeProperty.LR2, JudgeProperty.LR2),
 
+	IIDX(GaugeProperty.IIDX, JudgeProperty.IIDX),
+
 	Default(GaugeProperty.SEVENKEYS, JudgeProperty.SEVENKEYS),
 ;
 
@@ -41,7 +43,7 @@ public enum BMSPlayerRule {
     }
 
     public static BMSPlayerRule getBMSPlayerRule(Mode mode) {
-        for(BMSPlayerRule bmsrule : BMSPlayerRuleSet.LR2.ruleset) {
+        for(BMSPlayerRule bmsrule : BMSPlayerRuleSet.IIDX.ruleset) {
         	if(bmsrule.mode.length == 0) {
     			return bmsrule; 
         	}
@@ -51,7 +53,7 @@ public enum BMSPlayerRule {
         		}
         	}
         }
-        return LR2;
+        return IIDX;
     }
     
     public static void validate(BMSModel model) {
@@ -109,7 +111,8 @@ public enum BMSPlayerRule {
 enum BMSPlayerRuleSet {
 	
 	Beatoraja(BMSPlayerRule.Beatoraja_5, BMSPlayerRule.Beatoraja_7, BMSPlayerRule.Beatoraja_9, BMSPlayerRule.Beatoraja_24,  BMSPlayerRule.Beatoraja_Other),
-	LR2(BMSPlayerRule.LR2);
+	LR2(BMSPlayerRule.LR2),
+	IIDX(BMSPlayerRule.IIDX);
 	
 	public final BMSPlayerRule[] ruleset;
 	

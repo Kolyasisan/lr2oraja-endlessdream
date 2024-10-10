@@ -64,6 +64,19 @@ public enum GaugeProperty {
             GaugeElementProperty.EXCLASS_LR2,
             GaugeElementProperty.EXHARDCLASS_LR2,
     }),
+
+    // Kolyasisan: mirrors raja's 7key settings. Need to double-check for accuracy...
+    IIDX(new GaugeElementProperty[]{
+        GaugeElementProperty.ASSIST_EASY,
+            GaugeElementProperty.EASY,
+            GaugeElementProperty.NORMAL,
+            GaugeElementProperty.HARD,
+            GaugeElementProperty.EXHARD,
+            GaugeElementProperty.HAZARD,
+            GaugeElementProperty.CLASS,
+            GaugeElementProperty.EXCLASS,
+            GaugeElementProperty.EXHARDCLASS,
+    }),
     ;
 
     public final GaugeElementProperty[] values;

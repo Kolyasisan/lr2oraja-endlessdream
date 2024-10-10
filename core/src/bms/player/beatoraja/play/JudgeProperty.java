@@ -62,6 +62,20 @@ public enum JudgeProperty {
             new boolean[]{true, true, true, true, true, false },
             JudgeWindowRule.LR2
             ),
+
+            // Kolyasisan: IIDX-accurate timing (somewhat? need to double-check LNs and scratches), ceiled to nearest millisecond.
+            // useful for using raja for training with more accurate timing.
+    IIDX(new long[][]{ {-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {-500000, 500000} },
+            new long[][]{ {-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {-500000, 500000}},
+            new long[][]{ {-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}},
+            0,
+            new long[][]{ {-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}},
+            0,
+            new boolean[]{true, true, true, false, false, true },
+            MissCondition.ALWAYS,
+            new boolean[]{true, true, true, true, true, false },
+            JudgeWindowRule.IIDX
+            ),
     ;
 
     /**
@@ -171,7 +185,13 @@ public enum JudgeProperty {
             public long[][] create(long[][] org, int judgerank, int[] judgeWindowRate) {
                 return JudgeWindowRule.createLR2(org, judgerank, judgeWindowRate);
             }
-        };
+        },
+
+        // Kolyasisan: I do not want this! All timings should be scaling to 100.
+        // Judge gimmick bullshit like Gambol SPA seriously gets on my nerves, that's just not fun.
+        // Easy is the default rank for most BMS either way (index 3), but beatoraja selects normal if the rank property is out of bounds??? (index 2).
+        // Lock down from ever being modified.
+        IIDX (new int[]{100, 100, 100, 100, 100}, new boolean[]{true, true, true, true, true}),;
         
         /**
          * JUDGERANKの倍率(VERYHARD, HARD, NORMAL, EASY, VERYEASY)
