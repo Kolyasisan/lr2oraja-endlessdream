@@ -1,3 +1,7 @@
+# kolysraja
+
+kolysraja (vulgar russian pun lost in translation) is a fork of LR2oraja Endless Dream that features several tweaks that I wanted to make for myself, including timings that are more accurate to IIDX, separate keys for adding/removing favorites and hiding and others... Directly below is the original LR2oraja Endless Dream readme:
+
 # LR2oraja \~Endless Dream\~
 
 Endless Dream is a community fork and drop-in replacement for [beatoraja](https://github.com/exch-bms2/beatoraja) that integrates quality of life patches and new features not present in the upstream version of the game.
