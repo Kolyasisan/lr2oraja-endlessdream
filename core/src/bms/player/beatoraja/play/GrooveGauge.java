@@ -307,6 +307,20 @@ public final class GrooveGauge {
 			}
 			return f;
 		};
+
+		public static final GaugeModifier IIXD_A_VALUE = (f, model) -> {	
+			float aVal = 0;
+			int notesCount = model.getTotalNotes();
+			if (notesCount < 338)
+				aVal = 260.0f / (float)notesCount;
+			else
+				aVal = 760.5f / (notesCount + 650.0f);
+				
+			if (f > 0)
+				return f * aVal;
+			else
+				return f;
+		};
 		
 		public abstract float modify(float f, BMSModel model);		
 	}

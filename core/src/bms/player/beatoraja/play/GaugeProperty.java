@@ -59,6 +59,17 @@ public enum GaugeProperty {
             GaugeElementProperty.CLASS_LR2,
             GaugeElementProperty.EXCLASS_LR2,
             GaugeElementProperty.EXHARDCLASS_LR2),
+
+    IIDX(
+        GaugeElementProperty.ASSIST_EASY_IIDX,
+        GaugeElementProperty.EASY_IIDX,
+        GaugeElementProperty.NORMAL_IIDX,
+        GaugeElementProperty.HARD_IIDX,
+        GaugeElementProperty.EXHARD_IIDX,
+        GaugeElementProperty.HAZARD_IIDX,
+        GaugeElementProperty.CLASS_IIDX,
+        GaugeElementProperty.EXCLASS_IIDX,
+        GaugeElementProperty.EXHARDCLASS_IIDX),
     ;
 
     public final GaugeElementProperty[] values;
@@ -123,6 +134,16 @@ public enum GaugeProperty {
         CLASS_LR2(null ,0 ,100 ,100, 0, 2, new float[]{0.10f, 0.10f, 0.05f, -2f, -3f, -2f}, new float[][]{{32, 0.6f}}),
         EXCLASS_LR2(null ,0 ,100 ,100, 0, 2, new float[]{0.10f, 0.10f, 0.05f, -6.0f, -10.0f, -2.0f}, new float[][]{{32, 0.6f}}),
         EXHARDCLASS_LR2(null ,0 ,100 ,100, 0, 2, new float[]{0.10f, 0.10f, 0.05f, -12.0f, -20.0f, -2.0f}, new float[][]{}),
+
+        ASSIST_EASY_IIDX(IIXD_A_VALUE ,2 ,100 ,22, 60, 0, new float[]{1.0f, 1.0f, 0.5f, -1.6f, -4.8f, -1.6f}, new float[][]{}),
+        EASY_IIDX(IIXD_A_VALUE ,2 ,100 ,22, 80, 0, new float[]{1.0f, 1.0f, 0.5f, -1.6f, -4.8f, -1.6f}, new float[][]{}),
+        NORMAL_IIDX(IIXD_A_VALUE ,2 ,100 ,22, 80, 0, new float[]{1.0f, 1.0f, 0.5f, -2.0f, -6.0f, -2.0f}, new float[][]{}),
+        HARD_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.16f, 0.16f, 0, -5.0f, -9.0f, -5.0f}, new float[][]{{30, 0.5f}}),
+        EXHARD_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.16f, 0.16f, 0, -10.0f, -18.0f, -10.0f}, new float[][]{}),
+        HAZARD_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.15f, 0.06f, 0, -100.0f, -100.0f, -10.0f}, new float[][]{}),
+        CLASS_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.15f, 0.12f, 0.06f, -1.5f, -2.5f, -1.5f}, new float[][]{{5, 0.4f},{10, 0.5f},{15, 0.6f},{20, 0.7f},{25, 0.8f}}),
+        EXCLASS_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.15f, 0.12f, 0.03f, -3.0f, -5.0f, -3.0f}, new float[][]{}),
+        EXHARDCLASS_IIDX(null ,0 ,100 ,100, 0, 0, new float[]{0.15f, 0.06f, 0, -5.0f, -10.0f, -5.0f}, new float[][]{}),
         ;
 
         /**

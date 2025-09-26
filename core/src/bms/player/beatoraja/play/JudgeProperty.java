@@ -62,6 +62,17 @@ public enum JudgeProperty {
             new boolean[]{true, true, true, true, true, false },
             JudgeWindowRule.LR2
             ),
+    IIDX(new long[][]{{-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {0, 1000000}},
+        new long[][]{{-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {0, 1000000}},
+        new long[][]{{-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {0, 1000000}},
+        0,
+        new long[][]{{-17000, 17000}, {-34000, 34000}, {-117000, 117000}, {-250000, 250000}, {0, 1000000}},
+        0,
+        new boolean[]{true, true, true, false, false, true },
+        MissCondition.ALWAYS,
+        new boolean[]{true, true, true, true, true, false },
+        JudgeWindowRule.IIDX
+        ),
     ;
 
     /**
@@ -166,6 +177,7 @@ public enum JudgeProperty {
     public enum JudgeWindowRule {
         NORMAL (new int[]{25, 50, 75, 100, 125}, new boolean[]{false, false, false, false, true}),
         PMS (new int[]{33, 50, 70, 100, 133}, new boolean[]{true, false, false, true, true}),
+        IIDX (new int[]{100, 100, 100, 100, 100}, new boolean[]{true, true, true, true, true}),
         LR2 (new int[]{25, 50, 75, 100, 75}, new boolean[]{false, false, false, true, true}) {
             @Override
             public long[][] create(long[][] org, int judgerank, int[] judgeWindowRate) {
