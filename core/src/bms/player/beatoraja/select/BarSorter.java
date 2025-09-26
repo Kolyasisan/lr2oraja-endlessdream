@@ -114,9 +114,13 @@ public enum BarSorter {
 
 		//levelが同じ場合はDifficultyでソート
 		final int levelSort = ((SongBar) o1).getSongData().getLevel() - ((SongBar) o2).getSongData().getLevel();
-		if(levelSort == 0){
-			return ((SongBar)o1).getSongData().getDifficulty() - ((SongBar)o2).getSongData().getDifficulty();
-		}else{
+		final int difficultySort = ((SongBar)o1).getSongData().getDifficulty() - ((SongBar)o2).getSongData().getDifficulty();
+		final int titleSort = ((SongBar)o1).getSongData().getTitle().compareToIgnoreCase(((SongBar)o2).getSongData().getTitle());
+
+		// Same level. Sort by name.
+		if(levelSort == 0) {
+			return titleSort;
+		} else {
 			return levelSort;
 		}
 	}),
